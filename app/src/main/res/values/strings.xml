@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Personal Energy Trainer</string>
+    <string name="login">Login</string>
+    <string name="enterDetails">Please Enter Your Details</string>
 </resources>
