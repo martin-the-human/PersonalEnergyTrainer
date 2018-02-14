@@ -33,11 +33,11 @@
                 android:layout_weight="1"
                 android:text="@string/settings"/>
             <Button
-                android:id="@+id/btnNavigationExit"
+                android:id="@+id/btnNavigationRefresh"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/exit"/>
+                android:text="@string/refresh"/>
         </LinearLayout>
     </RelativeLayout>
 
