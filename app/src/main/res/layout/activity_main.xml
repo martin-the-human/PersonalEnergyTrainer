@@ -8,6 +8,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextClock
+            android:id="@+id/textClockTime"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="05/03/1997"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <TextClock
+            android:id="@+id/textClockDate"
+            android:layout_below="@id/textClockTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="10:00 - 10:30"
+            android:textAlignment="center"
+            android:textSize="20sp" />
         <LinearLayout
             android:id="@+id/linLayMainScreenButtons"
             android:layout_width="match_parent"
@@ -39,6 +58,24 @@
                 android:layout_weight="1"
                 android:text="@string/refresh"/>
         </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:max="10"
+            android:progress="3" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar"
+            android:layout_alignStart="@+id/seekBar"
+            android:layout_marginBottom="29dp" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
