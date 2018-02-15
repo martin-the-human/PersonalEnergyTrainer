@@ -1,7 +1,18 @@
 package com.example.martin.personalenergytrainer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextClock;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +20,49 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextClock tCT = findViewById(R.id.textClockTime);
+        TextView tCD = findViewById(R.id.textClockDate);
+
+        tCT.setFormat12Hour(null);
+        tCT.setFormat24Hour("HH:mm");
+
+        TextView txtDate = findViewById(R.id.textClockDate);
+        setDate(txtDate);
+
+        Button btnProfile = (Button) findViewById(R.id.btnNavigationProfile);
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profile = new Intent(MainActivity.this, UserProfile.class);
+                startActivity(profile);
+            }
+        });
+
+        Button btnStats = (Button) findViewById(R.id.btnNavigationStats);
+        btnStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent stats = new Intent(MainActivity.this, Stats.class);
+                startActivity(stats);
+            }
+        });
+
+        Button btnSettings = (Button) findViewById(R.id.btnNavigationSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settings = new Intent(MainActivity.this, Settings.class);
+                startActivity(settings);
+            }
+        });
+    }
+
+    public void setDate (TextView view){
+
+        Date today = Calendar.getInstance().getTime();//getting date
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        String date = formatter.format(today);
+        view.setText(date);
     }
 }
