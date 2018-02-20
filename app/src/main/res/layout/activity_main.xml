@@ -60,22 +60,13 @@
         </LinearLayout>
 
         <SeekBar
-            android:id="@+id/seekBar"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:id="@+id/seekBar2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:max="10"
-            android:progress="3" />
-
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/seekBar"
-            android:layout_alignStart="@+id/seekBar"
-            android:layout_marginBottom="29dp" />
+            android:layout_marginBottom="29dp"
+            android:progress="50"/>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
