@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:text="@string/enterDetails"
             android:layout_centerHorizontal="true"
-            android:layout_above="@id/editTextLoginEmail"/>
+            android:layout_above="@id/editTextLoginEmail"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/editTextLoginEmail"

@@ -18,18 +18,21 @@
             android:weightSum="2"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
+
             <TextView
                 android:id="@+id/txtFirstNameDescription"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="First Name"/>
+                android:text="First Name"
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/txtFirstNameUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Martin"/>
+                android:text="Martin"
+                android:textSize="20sp"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linLaySurname"
@@ -44,13 +47,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Surname"/>
+                android:text="Surname"
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/txtSurnameUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Wilson"/>
+                android:text="Wilson"
+                android:textSize="20sp"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linLayAddress"
@@ -65,13 +70,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/address"/>
+                android:text="@string/address"
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/txtAddressUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Bonnyrigg"/>
+                android:text="Bonnyrigg"
+                android:textSize="20sp"/>
         </LinearLayout>
     </RelativeLayout>
 
