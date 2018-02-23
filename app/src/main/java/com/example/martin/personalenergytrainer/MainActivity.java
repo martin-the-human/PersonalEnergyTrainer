@@ -1,10 +1,14 @@
 package com.example.martin.personalenergytrainer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.style.BackgroundColorSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextClock;
 import android.widget.TextView;
 
@@ -22,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextClock tCT = findViewById(R.id.textClockTime);
-        TextView tCD = findViewById(R.id.textClockDate);
 
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
+
+        final TextView txtValue = findViewById(R.id.txtBarValue);
 
         Button btnProfile = (Button) findViewById(R.id.btnNavigationProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +59,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent settings = new Intent(MainActivity.this, Settings.class);
                 startActivity(settings);
+            }
+        });
+
+        final SeekBar skBar = findViewById(R.id.seekBar);
+        skBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                Integer sliderValue = skBar.getProgress();
+                txtValue.setText(sliderValue.toString());
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }

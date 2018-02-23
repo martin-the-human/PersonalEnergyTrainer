@@ -7,8 +7,10 @@
     android:background="@color/colorBackground"
     tools:context="com.example.martin.personalenergytrainer.MainActivity">
     <RelativeLayout
+        android:id="@+id/relLayoutMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
 
         <TextView
             android:id="@+id/textClockDate"
@@ -28,6 +30,22 @@
             android:text="10:00 - 10:30"
             android:textAlignment="center"
             android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtBarValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/seekBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:textSize="20sp"/>
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/linLayMainScreenButtons"
+            android:layout_marginBottom="30dp"
+            android:progress="50"/>
         <LinearLayout
             android:id="@+id/linLayMainScreenButtons"
             android:layout_width="match_parent"
@@ -59,15 +77,6 @@
                 android:layout_weight="1"
                 android:text="@string/refresh"/>
         </LinearLayout>
-
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="29dp"
-            android:progress="50"/>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
