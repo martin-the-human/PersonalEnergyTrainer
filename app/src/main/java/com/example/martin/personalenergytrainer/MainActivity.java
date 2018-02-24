@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 Integer sliderValue = skBar.getProgress();
                 txtValue.setText(sliderValue.toString());
 
+                // multiply slider value to get rbg value and then change background colour
                 RelativeLayout relMain = findViewById(R.id.relLayoutMain);
                 Integer sliderValueAfter = Math.round(sliderValue * 2.55f);
                 relMain.setBackgroundColor(Color.rgb(255, sliderValueAfter,0));
