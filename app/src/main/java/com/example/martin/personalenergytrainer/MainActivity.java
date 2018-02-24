@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextClock tCT = findViewById(R.id.textClockTime);
 
+        // formatting clock to 24 hour only
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
