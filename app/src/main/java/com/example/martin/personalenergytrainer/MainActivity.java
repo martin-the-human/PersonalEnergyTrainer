@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
+        // set the date to current data
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
 
