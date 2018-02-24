@@ -28,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextClock tCT = findViewById(R.id.textClockTime);
 
+        // formatting clock to 24 hour only
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
+        // set the date to current data
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
 
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 Integer sliderValue = skBar.getProgress();
                 txtValue.setText(sliderValue.toString());
 
+                // multiply slider value to get rbg value and then change background colour
                 RelativeLayout relMain = findViewById(R.id.relLayoutMain);
                 Integer sliderValueAfter = Math.round(sliderValue * 2.55f);
                 relMain.setBackgroundColor(Color.rgb(255, sliderValueAfter,0));
