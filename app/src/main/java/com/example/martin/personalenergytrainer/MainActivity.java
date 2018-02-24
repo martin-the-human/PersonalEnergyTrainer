@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 txtValue.setText(sliderValue.toString());
 
                 RelativeLayout relMain = findViewById(R.id.relLayoutMain);
-                relMain.setBackgroundColor(Color.rgb(255,sliderValue*2,0));
+                Integer sliderValueAfter = Math.round(sliderValue * 2.55f);
+                relMain.setBackgroundColor(Color.rgb(255, sliderValueAfter,0));
             }
 
             @Override
