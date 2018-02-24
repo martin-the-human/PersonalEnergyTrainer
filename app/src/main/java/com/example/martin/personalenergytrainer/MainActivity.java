@@ -1,5 +1,6 @@
 package com.example.martin.personalenergytrainer;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 Integer sliderValue = skBar.getProgress();
                 txtValue.setText(sliderValue.toString());
+
+                RelativeLayout relMain = findViewById(R.id.relLayoutMain);
+                relMain.setBackgroundColor(Color.rgb(255,sliderValue*2,0));
             }
 
             @Override
