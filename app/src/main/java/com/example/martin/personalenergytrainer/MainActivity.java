@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView txtValue = findViewById(R.id.txtBarValue);
 
-        Button btnProfile = (Button) findViewById(R.id.btnNavigationProfile);
+        Button btnProfile = findViewById(R.id.btnNavigationProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnStats = (Button) findViewById(R.id.btnNavigationStats);
+        Button btnStats = findViewById(R.id.btnNavigationStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,12 +53,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSettings = (Button) findViewById(R.id.btnNavigationSettings);
+        Button btnSettings = findViewById(R.id.btnNavigationSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent settings = new Intent(MainActivity.this, Settings.class);
                 startActivity(settings);
+            }
+        });
+
+        Button btnRefresh = findViewById(R.id.btnNavigationRefresh);
+        btnRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
