@@ -26,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextClock tCT = findViewById(R.id.textClockTime);
-
         // formatting clock to 24 hour only
+        TextClock tCT = findViewById(R.id.textClockTime);
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
