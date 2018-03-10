@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PersonalEnergyTrainer.iml" filepath="$PROJECT_DIR$/PersonalEnergyTrainer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PersonalEnergyTrainer.iml" filepath="$PROJECT_DIR$/PersonalEnergyTrainer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Martin\Desktop\PersonalEnergyTrainer\app\app.iml" filepath="C:\Users\Martin\Desktop\PersonalEnergyTrainer\app\app.iml" />
     </modules>
   </component>
 </project>
