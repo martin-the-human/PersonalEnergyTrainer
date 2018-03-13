@@ -17,5 +17,19 @@ public class Settings extends AppCompatActivity {
         final RadioButton radio12 = findViewById(R.id.rad12hr);
         final RadioButton radio24 = findViewById(R.id.rad24hr);
 
+        radio12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radio12.setChecked(true);
+                radio24.setChecked(false);
+            }
+        });
+        radio24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                radio24.setChecked(true);
+                radio12.setChecked(false);
+            }
+        });
     }
 }
