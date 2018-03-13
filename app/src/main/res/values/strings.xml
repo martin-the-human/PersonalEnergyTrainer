@@ -12,5 +12,9 @@
     <string name="exit">exit</string>
     <string name="refresh">refresh</string>
 
+    <string name="colourBlindMode">Colour Blind Mode</string>
+    <string name="t12hrformat">12 Hour Time Format</string>
+    <string name="t24hrformat">24 Hour Time Format</string>
+
     <string name="address">Address</string>
 </resources>

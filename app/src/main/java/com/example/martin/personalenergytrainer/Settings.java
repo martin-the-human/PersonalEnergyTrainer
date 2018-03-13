@@ -12,7 +12,7 @@ public class Settings extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        String[] listOfSettings = {"Setting 1", "Setting 2", "Setting 3", "Setting 4"};
+        String[] listOfSettings = {"Colour Blind Mode", "12 Hour Time Format", "24 Hour Time Format"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_list_item_1, listOfSettings);
         getListView().setAdapter(adapter);
     }

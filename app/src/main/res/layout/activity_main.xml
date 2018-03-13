@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="10:00 - 10:30"
+            android:text="13:00 or 1PM"
             android:textAlignment="center"
             android:textSize="20sp"/>
 
