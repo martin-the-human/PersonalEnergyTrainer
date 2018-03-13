@@ -46,10 +46,11 @@
                 android:text="@string/t12hrformat"
                 android:textSize="20sp"/>
             <RadioButton
+                android:id="@+id/rad12hr"
                 android:textSize="20sp"
                 android:layout_width="0dp"
                 android:layout_height="64dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/timeFormat24"
@@ -65,6 +66,7 @@
                 android:text="@string/t24hrformat"
                 android:textSize="20sp"/>
             <RadioButton
+                android:id="@+id/rad24hr"
                 android:textSize="20sp"
                 android:layout_width="0dp"
                 android:layout_height="64dp"
@@ -75,8 +77,8 @@
             android:id="@+id/btnSaveSettings"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"/>
+            android:text="Save" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
