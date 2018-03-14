@@ -21,7 +21,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/placeholder"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <!-- Timeframe -->
         <TextClock
@@ -30,9 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="10:00 - 10:30"
+            android:text="13:00 or 1PM"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <!-- avatar -->
         <ImageView
@@ -53,7 +53,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:textSize="20sp"
-            android:text="placeholder text"/>
+            android:text="@string/placeholder"/>
 
         <!-- Bar which shows the current reading -->
         <SeekBar
@@ -89,7 +89,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/settings"/>
+                android:text="@string/settings"
+                android:textSize="13dp"/>
             <Button
                 android:id="@+id/btnNavigationRefresh"
                 android:layout_width="0dp"
