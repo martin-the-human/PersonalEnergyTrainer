@@ -21,8 +21,6 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    final SeekBar skBar = findViewById(R.id.seekBar);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
 
+        //moved seekbar here, should be able to login
+        final SeekBar skBar = findViewById(R.id.seekBar);
         final TextView txtValue = findViewById(R.id.txtBarValue);
 
         Button btnProfile = findViewById(R.id.btnNavigationProfile);
@@ -108,16 +108,16 @@ public class MainActivity extends AppCompatActivity {
 
     // takes in an integer
     // sets the bar progress relative to how much energy is being used against how much is being used
-    public void setBarProgress(int energyUsed, int expectedUsed)
-    {
-        // get values to determine how close the user is to the recommended usage
-        double expectedTenPercentUnder = expectedUsed * 0.9f;
-        double expectedTenPercentOver = expectedUsed * 1.1f;
-
-        // if the value is within
-        if (energyUsed > expectedTenPercentUnder && energyUsed < expectedTenPercentOver)
-        {
-            skBar.
-        }
-    }
+//    public void setBarProgress(int energyUsed, int expectedUsed)
+//    {
+//        // get values to determine how close the user is to the recommended usage
+//        double expectedTenPercentUnder = expectedUsed * 0.9f;
+//        double expectedTenPercentOver = expectedUsed * 1.1f;
+//
+//        // if the value is within
+//        if (energyUsed > expectedTenPercentUnder && energyUsed < expectedTenPercentOver)
+//        {
+//            skBar.
+//        }
+//    }
 }
