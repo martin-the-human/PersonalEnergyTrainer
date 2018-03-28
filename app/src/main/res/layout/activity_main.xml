@@ -63,7 +63,8 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@id/linLayMainScreenButtons"
             android:layout_marginBottom="30dp"
-            android:progress="50"/>
+            android:progress="50"
+            android:focusable="false"/>
 
         <!-- Buttons at the bottom -->
         <LinearLayout
