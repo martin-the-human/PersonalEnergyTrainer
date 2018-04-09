@@ -14,11 +14,21 @@
         android:paddingRight="10dp"
         android:layout_marginBottom="15dp">
 
+        <TextView
+            android:id="@+id/txt_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_settings"
+            android:textSize="35sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
+
         <!-- colour blind option-->
         <LinearLayout
             android:id="@+id/linLayBlind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txt_settings"
             android:weightSum="4">
 
             <TextView
@@ -91,13 +101,13 @@
                 android:text="@string/rad_txt_time"
                 android:textSize="20sp"/>
             <RadioButton
-                android:id="@+id/timeFormat12"
+                android:id="@+id/rad_12hr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/t12hrformat"
                 android:textSize="18sp"/>
             <RadioButton
-                android:id="@+id/timeFormat24"
+                android:id="@+id/rad_24hr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/t24hrformat"

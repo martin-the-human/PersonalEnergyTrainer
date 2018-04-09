@@ -15,6 +15,7 @@
     <string name="refresh">refresh</string>
 
     <!-- settings page-->
+    <string name="txt_settings">SETTINGS </string>
     <string name="colourBlindMode">Colour Blind Mode</string>
     <string name="rad_txt_time">Time Format: </string>
     <string name="t12hrformat">12 Hour Time Format</string>
@@ -25,5 +26,6 @@
     <string name="rad_white">White</string>
 
     <!--profile -->
+    <string name="txt_profile">PROFILE</string>
     <string name="address">Address</string>
 </resources>

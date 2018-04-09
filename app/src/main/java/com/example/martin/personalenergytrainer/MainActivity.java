@@ -5,18 +5,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.style.BackgroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,9 +20,10 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-//    Bundle get_colour = getIntent().getExtras();
-//    int shirt_colour; //number (1-3) determines shirt colour
+    //Bundle get_colour = getIntent().getExtras();
+    int shirt_colour; //number (1-3) determines shirt colour
     ImageView avatar_img;
+    SeekBar seekbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
         avatar_img = (ImageView)findViewById(R.id.img_avatar);
 
         //moved seekbar here, should be able to login
-        final SeekBar skBar = findViewById(R.id.seekBar);
+        //final SeekBar skBar = findViewById(R.id.seekBar);
+        seekbar = findViewById(R.id.seekBar);
         final TextView txtValue = findViewById(R.id.txtBarValue);
 
 
@@ -89,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //event for when seekbar is changed
-        skBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                Integer sliderValue = skBar.getProgress();
+                Integer sliderValue = seekbar.getProgress();
                 txtValue.setText(sliderValue.toString());
 
                 // multiply slider value to get rbg value and then change background colour
@@ -100,15 +98,14 @@ public class MainActivity extends AppCompatActivity {
                 Integer sliderValueAfter = Math.round(sliderValue * 2.55f);
                 relMain.setBackgroundColor(Color.rgb(255, sliderValueAfter,0));
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                set_colour(); //call the method
+                set_image(shirt_colour); //pass in the value from the previous method
             }
         });
     }
@@ -127,27 +124,59 @@ public class MainActivity extends AppCompatActivity {
         view.setText(date);
     }
 
-//    //
-//    public void set_image(int c)
-//    {
-//        if ()
-//        switch (c)
-//        {
-//            case 1: avatar_img.setImageResource(R.drawable.pink_default_blink);
-//            break;
-//            case 2: avatar_img.setImageResource(R.drawable.white_default_blink);
-//            break;
-//            case 3: avatar_img.setImageResource(R.drawable.blue_default_blink);
-//            break;
-//        }
-//    }
-//
-//    //set the colour using a key from settings page
-//    public void set_colour()
-//    {
-//        //obtain key from settings to set the shirt colour
-//        shirt_colour = get_colour.getInt("");
-//    }
+    //
+    public void set_image(int c) {
+        if (seekbar.getProgress() < 35) {
+            switch (c) {
+                case 1:
+                    avatar_img.setImageResource(R.drawable.pink_lethargic);
+                    break;
+                case 2:
+                    avatar_img.setImageResource(R.drawable.white_lethargic);
+                    break;
+                case 3:
+                    avatar_img.setImageResource(R.drawable.blue_lethargic);
+                    break;
+            }
+        } else if (seekbar.getProgress() > 35 && seekbar.getProgress() < 75) {
+            switch (c) {
+                case 1:
+                    avatar_img.setImageResource(R.drawable.pink_default_blink);
+                    break;
+                case 2:
+                    avatar_img.setImageResource(R.drawable.white_default_blink);
+                    break;
+                case 3:
+                    avatar_img.setImageResource(R.drawable.blue_default_blink);
+                    break;
+            }
+        } else {
+            switch (c) {
+                case 1:
+                    avatar_img.setImageResource(R.drawable.pink_default_blink);
+                    break;
+                case 2:
+                    avatar_img.setImageResource(R.drawable.white_default_blink);
+                    break;
+                case 3:
+                    avatar_img.setImageResource(R.drawable.blue_default_blink);
+                    break;
+            }
+        }
+    }
+
+    //set the colour using a key from settings page
+    public void set_colour()
+    {
+        //obtain key from settings to set the shirt colour
+        //shirt_colour = get_colour.getInt("");
+    }
+
+
+
+
+
+
 
     // takes in an integer
     // sets the bar progress relative to how much energy is being used against how much is being used

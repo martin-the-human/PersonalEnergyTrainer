@@ -14,8 +14,8 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        final RadioButton radio12 = findViewById(R.id.rad12hr);
-        final RadioButton radio24 = findViewById(R.id.rad24hr);
+        final RadioButton radio12 = findViewById(R.id.rad_12hr);
+        final RadioButton radio24 = findViewById(R.id.rad_24hr);
 
         radio12.setOnClickListener(new View.OnClickListener() {
             @Override
