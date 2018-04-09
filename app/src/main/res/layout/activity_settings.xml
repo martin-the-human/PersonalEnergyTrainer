@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:layout_marginBottom="15dp">
 
+        <!-- colour blind option-->
         <LinearLayout
             android:id="@+id/linLayBlind"
             android:layout_width="match_parent"
@@ -32,7 +34,8 @@
                 android:layout_height="64dp"
                 android:layout_weight="1"/>
         </LinearLayout>
-        <LinearLayout
+
+        <!--LinearLayout
             android:id="@+id/timeFormat12"
             android:layout_below="@id/linLayBlind"
             android:layout_width="match_parent"
@@ -71,8 +74,73 @@
                 android:layout_width="0dp"
                 android:layout_height="64dp"
                 android:layout_weight="1"/>
-        </LinearLayout>
+        </LinearLayout-->
 
+        <!-- time format options -->
+        <RadioGroup
+            android:id="@+id/rad_grp_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linLayBlind"
+            android:layoutDirection="rtl"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/rad_txt_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rad_txt_time"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:id="@+id/timeFormat12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/t12hrformat"
+                android:textSize="18sp"/>
+            <RadioButton
+                android:id="@+id/timeFormat24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/t24hrformat"
+                android:textSize="18sp"/>
+
+        </RadioGroup>
+
+
+        <!-- shirt colour options-->
+        <RadioGroup
+            android:id="@+id/rad_grp_shirt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:layout_below="@+id/rad_grp_time"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/rad_txt_shirt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rad_txt_shirt"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:id="@+id/rad_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rad_blue"
+                android:textSize="18sp"/>
+            <RadioButton
+                android:id="@+id/rad_pink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rad_pink"
+                android:textSize="18sp"/>
+            <RadioButton
+                android:id="@+id/rad_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rad_white"
+                android:textSize="18sp"/>
+        </RadioGroup>
+
+        <!-- save button -->
         <Button
             android:id="@+id/btnSaveSettings"
             android:layout_width="100dp"
