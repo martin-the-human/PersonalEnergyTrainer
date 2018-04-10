@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     //
     public void set_image(int c) {
+        // 35 < skbar = lethargic, 35 > skbar < 75 = normal , 75 < skbar = overflow
         if (seekbar.getProgress() < 35) {
             switch (c) {
                 case 1:
@@ -153,13 +154,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             switch (c) {
                 case 1:
-                    avatar_img.setImageResource(R.drawable.pink_default_blink);
+                    avatar_img.setImageResource(R.drawable.pink_overflow);
                     break;
                 case 2:
-                    avatar_img.setImageResource(R.drawable.white_default_blink);
+                    avatar_img.setImageResource(R.drawable.white_overflow);
                     break;
                 case 3:
-                    avatar_img.setImageResource(R.drawable.blue_default_blink);
+                    avatar_img.setImageResource(R.drawable.blue_overflow);
                     break;
             }
         }
@@ -168,8 +169,7 @@ public class MainActivity extends AppCompatActivity {
     //set the colour using a key from settings page
     public void set_colour()
     {
-        //obtain key from settings to set the shirt colour
-        //shirt_colour = get_colour.getInt("");
+        //add code: pull data from server
     }
 
 

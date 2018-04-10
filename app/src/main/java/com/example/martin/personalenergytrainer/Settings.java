@@ -6,30 +6,105 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
+
+    int colour;
+    int time;
+
+    RadioGroup radgrp_time;
+    RadioButton radio_12;
+    RadioButton radio_24;
+
+    RadioGroup radgrp_colour;
+    RadioButton blue;
+    RadioButton pink;
+    RadioButton white;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        final RadioButton radio12 = findViewById(R.id.rad_12hr);
-        final RadioButton radio24 = findViewById(R.id.rad_24hr);
+        radgrp_time = (RadioGroup)findViewById(R.id.rad_grp_time);
+        radio_12 = findViewById(R.id.rad_12hr);
+        radio_24 = findViewById(R.id.rad_24hr);
 
-        radio12.setOnClickListener(new View.OnClickListener() {
+        radgrp_colour = (RadioGroup)findViewById(R.id.rad_grp_shirt);
+        blue = findViewById(R.id.rad_blue);
+        pink = findViewById(R.id.rad_pink);
+        white = findViewById(R.id.rad_white);
+
+//        radio_12.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                radio_12.setChecked(true);
+//                radio_24.setChecked(false);
+//            }
+//        });
+//        radio_24.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                radio_24.setChecked(true);
+//                radio_12.setChecked(false);
+//            }
+//        });
+
+        radgrp_time.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                radio12.setChecked(true);
-                radio24.setChecked(false);
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                time_format();
+                toast("Time format has been changed");
             }
         });
-        radio24.setOnClickListener(new View.OnClickListener() {
+
+        radgrp_colour.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                radio24.setChecked(true);
-                radio12.setChecked(false);
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                shirt_colour();
+                toast("Colour has been changed!");
             }
         });
+    }
+
+    public void toast(String s)
+    {
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
+    }
+
+    public void time_format(){
+        //1 = 12hr, 2 = 24hr, 3 = nothing checked
+        if (radio_12.isChecked()) {
+            time = 1;
+        }
+        else if (radio_24.isChecked()){
+            time = 2;
+        }
+        else if (!radio_12.isChecked() && !radio_24.isChecked()){
+            time = 3;
+        }
+    }
+
+    public void shirt_colour(){
+        // 1 = pink, 2 = white, 3 = blue/default
+        if (pink.isChecked()){
+            colour = 1;
+        }
+        else if (white.isChecked()){
+            colour = 2;
+        }
+        else if (blue.isChecked()){
+            colour = 3;
+        }
+        else if (!pink.isChecked() && !white.isChecked() && !blue.isChecked()){
+            colour = 3;
+        }
+    }
+
+    public void save()
+    {
+        //add code: save to server
     }
 }
