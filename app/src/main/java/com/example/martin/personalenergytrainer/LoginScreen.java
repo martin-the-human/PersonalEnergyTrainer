@@ -15,8 +15,6 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        URL url = new URL("146.176.251.40");
-
         Button btn_login = (Button) findViewById(R.id.buttonLogin);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
