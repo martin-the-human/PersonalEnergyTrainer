@@ -14,6 +14,10 @@
     <string name="exit">exit</string>
     <string name="refresh">refresh</string>
 
+    <!--profile -->
+    <string name="txt_profile">PROFILE</string>
+    <string name="address">Address</string>
+
     <!-- settings page-->
     <string name="txt_settings">SETTINGS </string>
     <string name="colourBlindMode">Colour Blind Mode</string>
@@ -25,7 +29,8 @@
     <string name="rad_pink">Pink</string>
     <string name="rad_white">White</string>
 
-    <!--profile -->
-    <string name="txt_profile">PROFILE</string>
-    <string name="address">Address</string>
+
+    <!-- stats page -->
+    <string name="txt_stats">STATS</string>
+
 </resources>
