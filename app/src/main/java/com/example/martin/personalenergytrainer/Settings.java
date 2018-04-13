@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import com.example.martin.personalenergytrainer.POSTandGET;
+import com.example.martin.personalenergytrainer.retrofit.APIRelated;
 
 
 public class Settings extends AppCompatActivity {
@@ -42,22 +43,6 @@ public class Settings extends AppCompatActivity {
         white = findViewById(R.id.rad_white);
 
         save_settings = (Button)findViewById(R.id.btnSaveSettings);
-
-//        radio_12.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                radio_12.setChecked(true);
-//                radio_24.setChecked(false);
-//            }
-//        });
-//        radio_24.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                radio_24.setChecked(true);
-//                radio_12.setChecked(false);
-//            }
-//        });
-
         radgrp_time.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -77,14 +62,14 @@ public class Settings extends AppCompatActivity {
         save_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save();
+
             }
         });
     }
 
     public void toast(String s)
     {
-        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
     public void time_format(){

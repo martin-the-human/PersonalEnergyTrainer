@@ -24,6 +24,7 @@
         <activity android:name=".UserProfile" />
         <activity android:name=".Stats" />
         <activity android:name=".Settings"></activity>
+        <activity android:name=".POSTandGET"></activity>
     </application>
 
 </manifest>
