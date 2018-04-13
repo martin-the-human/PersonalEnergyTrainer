@@ -4,10 +4,12 @@ import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
 
 public class Settings extends AppCompatActivity {
 
@@ -23,6 +25,8 @@ public class Settings extends AppCompatActivity {
     RadioButton pink;
     RadioButton white;
 
+    Button save_settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,8 @@ public class Settings extends AppCompatActivity {
         blue = findViewById(R.id.rad_blue);
         pink = findViewById(R.id.rad_pink);
         white = findViewById(R.id.rad_white);
+
+        save_settings = (Button)findViewById(R.id.btnSaveSettings);
 
 //        radio_12.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -65,6 +71,13 @@ public class Settings extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 shirt_colour();
                 toast("Colour has been changed!");
+            }
+        });
+
+        save_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                save();
             }
         });
     }
@@ -105,6 +118,7 @@ public class Settings extends AppCompatActivity {
 
     public void save()
     {
-        //add code: save to server
+        //add code: save to server – POST button code
+
     }
 }
