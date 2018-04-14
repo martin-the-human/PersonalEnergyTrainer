@@ -12,7 +12,7 @@ import com.example.martin.personalenergytrainer.POSTandGET;
 import com.example.martin.personalenergytrainer.retrofit.APIRelated;
 
 
-public class Settings extends AppCompatActivity {
+public class SettingsOld extends AppCompatActivity {
 
     int colour;
     int time;
