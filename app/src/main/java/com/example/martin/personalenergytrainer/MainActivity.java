@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // formatting clock to 24 hour only
         TextClock tCT = findViewById(R.id.textClockTime);
         tCT.setFormat12Hour(null);
@@ -82,30 +81,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            }
-        });
-
-
-        //event for when seekbar is changed
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                Integer sliderValue = seekbar.getProgress();
-                txtValue.setText(sliderValue.toString());
-
-                // multiply slider value to get rbg value and then change background colour
-                RelativeLayout relMain = findViewById(R.id.relLayoutMain);
-                Integer sliderValueAfter = Math.round(sliderValue * 2.55f);
-                relMain.setBackgroundColor(Color.rgb(255, sliderValueAfter,0));
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                set_colour(); //call the method
-                set_image(shirt_colour); //pass in the value from the previous method
             }
         });
     }

@@ -13,8 +13,8 @@ import retrofit2.http.*
 
 class APIRelated {
 
-    interface APIService{
-        @GET("user/{user}")
+    interface APIService {
+        @GET("/users/{user}")
         fun greetUser(@Path("user") user: String): Call<ResponseBody>
 
         @Headers("Content-type: application/json")
@@ -22,9 +22,9 @@ class APIRelated {
         fun getVectors(@Body body: JsonObject): Call<ResponseBody>
     }
 
-    companion object{
+    companion object {
         private val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.1.4:5000") //change to our url
+                .baseUrl("http://146.176.251.40")
                 .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
                 .build()
 

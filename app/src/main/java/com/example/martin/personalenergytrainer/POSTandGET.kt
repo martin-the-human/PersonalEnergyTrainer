@@ -9,8 +9,6 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
-
 import android.widget.Toast
 import kotlinx.android.synthetic.main.postget_test.* //this is required for the layout used
 
@@ -68,7 +66,7 @@ public class POSTandGET : AppCompatActivity(){
     {
         APIRelated
                 .service
-                .greetUser("Audhil") //change to what you want
+                .greetUser("Gandtix") //change to what you want
                 .enqueue(object: Callback<ResponseBody>{
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable){
                         println("---TTTT :: GET Throwable EXCEPTION:: "+ t.message)
@@ -79,6 +77,9 @@ public class POSTandGET : AppCompatActivity(){
                             val msg = response.body()?.string()
                             println("---TTTT :: GET msg from server :: " + msg)
                             Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
+                        }
+                        else{
+                            println("didn't work")
                         }
                     }
                 })
