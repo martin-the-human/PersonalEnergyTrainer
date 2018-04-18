@@ -10,7 +10,7 @@
         android:id="@+id/relLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/background">
 
         <!-- The text at the top -->
         <TextView
@@ -64,7 +64,8 @@
             android:layout_above="@id/linLayMainScreenButtons"
             android:layout_marginBottom="30dp"
             android:progress="50"
-            android:focusable="false"/>
+            android:focusable="false"
+            />
 
         <!-- Buttons at the bottom -->
         <LinearLayout

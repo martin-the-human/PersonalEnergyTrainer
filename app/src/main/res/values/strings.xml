@@ -3,18 +3,34 @@
 
     <string name="app_name">Personal Energy Trainer</string>
 
+    <!--login page-->
     <string name="login">Login</string>
     <string name="enterDetails">Please Enter Your Details</string>
 
+    <!-- main activity buttons -->
     <string name="profile">profile</string>
     <string name="stats">stats</string>
     <string name="settings">settings</string>
     <string name="exit">exit</string>
     <string name="refresh">refresh</string>
 
+    <!--profile -->
+    <string name="txt_profile">PROFILE</string>
+    <string name="address">Address</string>
+
+    <!-- settings page-->
+    <string name="txt_settings">SETTINGS </string>
     <string name="colourBlindMode">Colour Blind Mode</string>
+    <string name="rad_txt_time">Time Format: </string>
     <string name="t12hrformat">12 Hour Time Format</string>
     <string name="t24hrformat">24 Hour Time Format</string>
+    <string name="rad_txt_shirt">Shirt Colour:</string>
+    <string name="rad_blue">Blue</string>
+    <string name="rad_pink">Pink</string>
+    <string name="rad_white">White</string>
 
-    <string name="address">Address</string>
+
+    <!-- stats page -->
+    <string name="txt_stats">STATS</string>
+
 </resources>
