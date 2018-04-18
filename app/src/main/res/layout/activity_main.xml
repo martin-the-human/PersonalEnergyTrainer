@@ -10,7 +10,7 @@
         android:id="@+id/relLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="@drawable/bg2">
 
         <!-- The text at the top -->
         <TextView
@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/seekBar"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/colorSeekBar"
             android:layout_marginBottom="5dp"
             android:textSize="20sp"
             android:text="@string/placeholder"/>
@@ -60,6 +61,7 @@
             android:id="@+id/seekBar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:theme="@style/SeekBarColor"
             android:layout_centerHorizontal="true"
             android:layout_above="@id/linLayMainScreenButtons"
             android:layout_marginBottom="30dp"

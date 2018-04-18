@@ -11,4 +11,9 @@
         <item name="android:typeface">monospace</item>
     </style>
 
+    <style name="SeekBarColor"
+        parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">#fff</item>
+    </style>
+
 </resources>
