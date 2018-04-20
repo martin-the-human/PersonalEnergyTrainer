@@ -17,6 +17,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,7 +81,18 @@ public class MainActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Random r1 = new Random();
+                int i1 = r1.nextInt(4 - 1) + 1;
+                shirt_colour = i1;
 
+                Random r2 = new Random();
+                int i2 = r2.nextInt(101 - 0) + 0;
+                int test_energy_usage = i2;
+
+                Toast.makeText(MainActivity.this, Integer.toString(i1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, Integer.toString(i2), Toast.LENGTH_SHORT).show();
+
+                set_image(shirt_colour, test_energy_usage);
             }
         });
     }
@@ -100,9 +112,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //
-    public void set_image(int c) {
+    public void set_image(int c, int energyConsumption)
+    {
         // 35 < skbar = lethargic, 35 > skbar < 75 = normal , 75 < skbar = overflow
-        if (seekbar.getProgress() < 35) {
+        if (energyConsumption < 35) {
             switch (c) {
                 case 1:
                     avatar_img.setImageResource(R.drawable.pink_lethargic);
@@ -114,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     avatar_img.setImageResource(R.drawable.blue_lethargic);
                     break;
             }
-        } else if (seekbar.getProgress() > 35 && seekbar.getProgress() < 75) {
+        } else if (energyConsumption >= 35 && energyConsumption < 75) {
             switch (c) {
                 case 1:
                     avatar_img.setImageResource(R.drawable.pink_default_blink);
