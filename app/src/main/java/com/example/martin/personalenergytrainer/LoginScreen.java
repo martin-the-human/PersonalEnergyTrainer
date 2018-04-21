@@ -24,4 +24,13 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
     }
+
+    //send login details to the server and load the accounts details
+    public void login_save(){
+
+    }
+
+    public void login_load(){
+
+    }
 }
