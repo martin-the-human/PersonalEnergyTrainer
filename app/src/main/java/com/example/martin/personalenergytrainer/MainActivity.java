@@ -168,25 +168,4 @@ public class MainActivity extends AppCompatActivity {
     {
         //add code: pull data from server
     }
-
-
-
-
-
-
-
-    // takes in an integer
-    // sets the bar progress relative to how much energy is being used against how much is being used
-//    public void setBarProgress(int energyUsed, int expectedUsed)
-//    {
-//        // get values to determine how close the user is to the recommended usage
-//        double expectedTenPercentUnder = expectedUsed * 0.9f;
-//        double expectedTenPercentOver = expectedUsed * 1.1f;
-//
-//        // if the value is within
-//        if (energyUsed > expectedTenPercentUnder && energyUsed < expectedTenPercentOver)
-//        {
-//            skBar.
-//        }
-//    }
 }
