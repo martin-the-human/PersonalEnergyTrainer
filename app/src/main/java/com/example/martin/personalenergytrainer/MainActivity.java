@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, Integer.toString(i2), Toast.LENGTH_SHORT).show();
 
                 set_image(shirt_colour, test_energy_usage);
+                seekbar.setProgress(i2);
             }
         });
 
