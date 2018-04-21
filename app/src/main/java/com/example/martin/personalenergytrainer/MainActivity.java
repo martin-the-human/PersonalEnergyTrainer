@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Bundle get_colour = getIntent().getExtras();
+    // setup and initialise global variables //
     int shirt_colour; //number (1-3) determines shirt colour
     ImageView avatar_img;
     SeekBar seekbar;
@@ -32,25 +32,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // formatting clock to 24 hour only
+        // formatting clock to 24 hour only and set the date to current date
         TextClock tCT = findViewById(R.id.textClockTime);
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
-        // set the date to current date
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
 
-        //set the image of the avatar
+        // bind image and seekbar to view
         avatar_img = (ImageView)findViewById(R.id.img_avatar);
-
-        //moved seekbar here, should be able to login
-        //final SeekBar skBar = findViewById(R.id.seekBar);
         seekbar = findViewById(R.id.seekBar);
         final TextView txtValue = findViewById(R.id.txtBarValue);
 
 
-        //navigation buttons, takes you to the respective pages
+        //bind and set navigation buttons, takes you to the respective pages
         Button btnProfile = findViewById(R.id.btnNavigationProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // create random integers as test values to ensure other methods work
         Button btnRefresh = findViewById(R.id.btnNavigationRefresh);
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,8 +104,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //easy way to create a toast message
-    public void toast(String s)
+    // other methods to be called in OnCreate() //
+
+    public void toast(String s)//easy way to create string toasts
     {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
     }
@@ -120,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         view.setText(date);
     }
     
-    //
+    //set image according to value measured and colour of shirt
     public void set_image(int c, int energyConsumption)
     {
         // 35 < skbar = lethargic, 35 > skbar < 75 = normal , 75 < skbar = overflow
@@ -163,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //set the colour using a key from settings page
+    //pull data from the server, saved from settings page
     public void set_colour()
     {
         //add code: pull data from server
