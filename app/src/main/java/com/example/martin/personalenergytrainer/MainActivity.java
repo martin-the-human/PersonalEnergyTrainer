@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -95,6 +96,14 @@ public class MainActivity extends AppCompatActivity {
                 set_image(shirt_colour, test_energy_usage);
             }
         });
+
+        //disable the seekbar so the users cannot affect the current reading
+        seekbar.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+                return true;
+            }
+        });
     }
 
 
@@ -110,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         String date = formatter.format(today);
         view.setText(date);
     }
-
+    
     //
     public void set_image(int c, int energyConsumption)
     {
