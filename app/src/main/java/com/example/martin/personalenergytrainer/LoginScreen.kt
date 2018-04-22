@@ -3,6 +3,7 @@ package com.example.martin.personalenergytrainer
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import com.example.martin.personalenergytrainer.retrofit.APIRelated
 import com.google.gson.JsonObject
 import okhttp3.ResponseBody
@@ -27,18 +28,24 @@ class LoginScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
+        username = findViewById(R.id.editTextLoginEmail)
+        password = findViewById(R.id.editTextLoginPassword)
+
         val btn_login = findViewById<View>(R.id.buttonLogin) as Button
         btn_login.setOnClickListener {
+            var un = username.text.toString()
+            var pw = password.text.toString()
             val mainActivity = Intent(this@LoginScreen, MainActivity::class.java)
             startActivity(mainActivity)
+            //find_details(un, pw)
         }
     }
 
-    //send login details to the server and load the accounts details
-    fun login_save() {
+    //send login details to the server to load the accounts details
+    fun find_details(un: String, pw:String) {
         val jsonObj = JsonObject()
-        jsonObj.addProperty("username", "rhythm") //change this line
-        jsonObj.addProperty("password", "me") //change this line too
+        jsonObj.addProperty("username", un) //change this line
+        jsonObj.addProperty("password", pw) //change this line too
 
         //POST demo
         APIRelated
@@ -57,6 +64,11 @@ class LoginScreen : AppCompatActivity() {
                         }
                     }
                 })
+    }
+
+    fun test_data(un: String, pw: String) {
+        Toast.makeText(applicationContext, un, Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, pw, Toast.LENGTH_SHORT).show()
     }
 
 }
