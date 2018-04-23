@@ -23,6 +23,8 @@ class LoginScreen : AppCompatActivity() {
 
     lateinit var username: EditText
     lateinit var password: EditText
+    lateinit var btn_login: Button
+    //val bundle: Bundle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +32,19 @@ class LoginScreen : AppCompatActivity() {
 
         username = findViewById(R.id.editTextLoginEmail)
         password = findViewById(R.id.editTextLoginPassword)
+        btn_login = findViewById<View>(R.id.buttonLogin) as Button
 
-        val btn_login = findViewById<View>(R.id.buttonLogin) as Button
         btn_login.setOnClickListener {
             var un = username.text.toString()
             var pw = password.text.toString()
+
             val mainActivity = Intent(this@LoginScreen, MainActivity::class.java)
+            val user_info = Bundle()
+            user_info.putString("username", un)
+            user_info.putString("password", pw)
+
+            mainActivity.putExtras(user_info)
+
             startActivity(mainActivity)
             //find_details(un, pw)
         }
@@ -66,9 +75,12 @@ class LoginScreen : AppCompatActivity() {
                 })
     }
 
+    //test account
     fun test_data(un: String, pw: String) {
+        //show that edittext can be converted to string
         Toast.makeText(applicationContext, un, Toast.LENGTH_SHORT).show()
         Toast.makeText(applicationContext, pw, Toast.LENGTH_SHORT).show()
+
     }
 
 }

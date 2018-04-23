@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     // setup and initialise global variables //
     int shirt_colour; //number (1-3) determines shirt colour
+    int test_energy_usage;
+    String get_un;
+    String get_pw;
     ImageView avatar_img;
     SeekBar seekbar;
 
@@ -79,19 +82,34 @@ public class MainActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //get the extras
+                Bundle user_info = getIntent().getExtras();
+                String extra_un = user_info.getString("username");
+                String extra_pw = user_info.getString("password");
+
+                //data for certain accounts
+                if (extra_un.matches("hello") && extra_pw.matches("bye") ){
+                    shirt_colour = 2;
+                    test_energy_usage = 72;
+                }
+
+                //if no account found then:
+                else {
                 Random r1 = new Random();
                 int i1 = r1.nextInt(4 - 1) + 1;
                 shirt_colour = i1;
 
                 Random r2 = new Random();
                 int i2 = r2.nextInt(101 - 0) + 0;
-                int test_energy_usage = i2;
+                test_energy_usage = i2;
 
                 Toast.makeText(MainActivity.this, Integer.toString(i1), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, Integer.toString(i2), Toast.LENGTH_SHORT).show();
+            }
 
                 set_image(shirt_colour, test_energy_usage);
-                seekbar.setProgress(i2);
+                seekbar.setProgress(test_energy_usage);
             }
         });
 
