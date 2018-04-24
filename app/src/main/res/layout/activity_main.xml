@@ -73,7 +73,7 @@
             android:id="@+id/linLayMainScreenButtons"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:weightSum="4"
+            android:weightSum="3"
             android:layout_alignParentBottom="true">
             <Button
                 android:id="@+id/btnNavigationProfile"
@@ -81,12 +81,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/profile"/>
-            <Button
-                android:id="@+id/btnNavigationStats"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/stats"/>
             <Button
                 android:id="@+id/btnNavigationSettings"
                 android:layout_width="0dp"

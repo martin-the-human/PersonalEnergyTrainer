@@ -59,15 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnStats = findViewById(R.id.btnNavigationStats);
-        btnStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent stats = new Intent(MainActivity.this, Stats.class);
-                startActivity(stats);
-            }
-        });
-
         Button btnSettings = findViewById(R.id.btnNavigationSettings);
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
