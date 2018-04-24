@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     // setup and initialise global variables //
     int shirt_colour; //number (1-3) determines shirt colour
-    int test_energy_usage;
-    String extra_un;
-    String extra_pw;
+    int test_energy_usage; //energy consumption measured
     ImageView avatar_img;
     SeekBar seekbar;
 
@@ -56,15 +54,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent profile = new Intent(MainActivity.this, UserProfile.class);
                 startActivity(profile);
-            }
-        });
-
-        Button btnStats = findViewById(R.id.btnNavigationStats);
-        btnStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent stats = new Intent(MainActivity.this, Stats.class);
-                startActivity(stats);
             }
         });
 
