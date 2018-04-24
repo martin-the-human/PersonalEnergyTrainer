@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_above="@id/login_main_text"
             android:padding="35dp"
-            android:src="@drawable/Napier_Logo"/>
+            android:src="@drawable/napier_logo"/>
 
         <TextView
             android:id="@+id/login_main_text"
