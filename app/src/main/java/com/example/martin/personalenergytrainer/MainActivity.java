@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     // setup and initialise global variables //
     int shirt_colour; //number (1-3) determines shirt colour
     int test_energy_usage;
-    String get_un;
-    String get_pw;
+    String extra_un;
+    String extra_pw;
     ImageView avatar_img;
     SeekBar seekbar;
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 shirt_colour = i1;
 
                 Random r2 = new Random();
-                int i2 = r2.nextInt(101 - 0) + 0;
+                int i2 = r2.nextInt(101 - 0);
                 test_energy_usage = i2;
 
                 Toast.makeText(MainActivity.this, Integer.toString(i1), Toast.LENGTH_SHORT).show();
