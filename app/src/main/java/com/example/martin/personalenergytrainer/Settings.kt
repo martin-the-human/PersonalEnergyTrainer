@@ -89,6 +89,7 @@ public class Settings : AppCompatActivity(){
         }
     }
 
+    //send the updated data to the server
     fun save()
     {
         val jsonObj = JsonObject()

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,8 +22,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Bundle get_colour = getIntent().getExtras();
+    // setup and initialise global variables //
     int shirt_colour; //number (1-3) determines shirt colour
+    int test_energy_usage;
+    String extra_un;
+    String extra_pw;
     ImageView avatar_img;
     SeekBar seekbar;
 
@@ -31,25 +35,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // formatting clock to 24 hour only
+        // formatting clock to 24 hour only and set the date to current date
         TextClock tCT = findViewById(R.id.textClockTime);
         tCT.setFormat12Hour(null);
         tCT.setFormat24Hour("HH:mm");
 
-        // set the date to current date
         TextView txtDate = findViewById(R.id.textClockDate);
         setDate(txtDate);
 
-        //set the image of the avatar
+        // bind image and seekbar to view
         avatar_img = (ImageView)findViewById(R.id.img_avatar);
-
-        //moved seekbar here, should be able to login
-        //final SeekBar skBar = findViewById(R.id.seekBar);
         seekbar = findViewById(R.id.seekBar);
         final TextView txtValue = findViewById(R.id.txtBarValue);
 
 
-        //navigation buttons, takes you to the respective pages
+        //bind and set navigation buttons, takes you to the respective pages
         Button btnProfile = findViewById(R.id.btnNavigationProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,29 +77,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // create random integers as test values to ensure other methods work
         Button btnRefresh = findViewById(R.id.btnNavigationRefresh);
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //get the extras
+                Bundle user_info = getIntent().getExtras();
+                String extra_un = user_info.getString("username");
+                String extra_pw = user_info.getString("password");
+
+                //data for certain accounts
+                if (extra_un.matches("hello") && extra_pw.matches("bye") ){
+                    shirt_colour = 2;
+                    test_energy_usage = 72;
+                }
+
+                //if no account found then:
+                else {
                 Random r1 = new Random();
                 int i1 = r1.nextInt(4 - 1) + 1;
                 shirt_colour = i1;
 
                 Random r2 = new Random();
-                int i2 = r2.nextInt(101 - 0) + 0;
-                int test_energy_usage = i2;
+                int i2 = r2.nextInt(101 - 0);
+                test_energy_usage = i2;
 
                 Toast.makeText(MainActivity.this, Integer.toString(i1), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, Integer.toString(i2), Toast.LENGTH_SHORT).show();
+            }
 
                 set_image(shirt_colour, test_energy_usage);
+                seekbar.setProgress(test_energy_usage);
+            }
+        });
+
+        //disable the seekbar so the users cannot affect the current reading
+        seekbar.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+                return true;
             }
         });
     }
 
 
-    //easy way to create a toast message
-    public void toast(String s)
+    // other methods to be called in OnCreate() //
+
+    public void toast(String s)//easy way to create string toasts
     {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
     }
@@ -110,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
         String date = formatter.format(today);
         view.setText(date);
     }
-
-    //
+    
+    //set image according to value measured and colour of shirt
     public void set_image(int c, int energyConsumption)
     {
         // 35 < skbar = lethargic, 35 > skbar < 75 = normal , 75 < skbar = overflow
@@ -154,30 +180,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //set the colour using a key from settings page
+    //pull data from the server, saved from settings page
     public void set_colour()
     {
         //add code: pull data from server
     }
-
-
-
-
-
-
-
-    // takes in an integer
-    // sets the bar progress relative to how much energy is being used against how much is being used
-//    public void setBarProgress(int energyUsed, int expectedUsed)
-//    {
-//        // get values to determine how close the user is to the recommended usage
-//        double expectedTenPercentUnder = expectedUsed * 0.9f;
-//        double expectedTenPercentOver = expectedUsed * 1.1f;
-//
-//        // if the value is within
-//        if (energyUsed > expectedTenPercentUnder && energyUsed < expectedTenPercentOver)
-//        {
-//            skBar.
-//        }
-//    }
 }

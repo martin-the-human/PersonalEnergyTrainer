@@ -6,29 +6,38 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context="com.example.martin.personalenergytrainer.LoginScreen">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/login_main_text"
+            android:padding="35dp"
+            android:src="@drawable/napier_logo"/>
+
         <TextView
             android:id="@+id/login_main_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enterDetails"
-            android:layout_centerHorizontal="true"
             android:layout_above="@id/editTextLoginEmail"
-            android:textSize="20sp"/>
+            android:layout_centerHorizontal="true"
+            android:text="@string/enterDetails"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextLoginEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginTop="40dp"
             android:ems="14"
             android:hint="Email"
-            android:textAlignment="center"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
 
         <EditText
             android:id="@+id/editTextLoginPassword"
@@ -38,8 +47,8 @@
             android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="Password"
-            android:textAlignment="center"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/buttonLogin"
