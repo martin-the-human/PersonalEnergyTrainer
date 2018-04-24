@@ -89,9 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 String extra_pw = user_info.getString("password");
 
                 //data for certain accounts
-                if (extra_un.matches("hello") && extra_pw.matches("bye") ){
+                if (extra_un.matches("test1") && extra_pw.matches("test1") ){
                     shirt_colour = 2;
                     test_energy_usage = 72;
+                }
+                else if (extra_un.matches("test2") && extra_pw.matches("test2")){
+                    shirt_colour = 1;
+                    test_energy_usage = 23;
                 }
 
                 //if no account found then:
@@ -127,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void toast(String s)//easy way to create string toasts
     {
-        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
     public void setDate (TextView view){
