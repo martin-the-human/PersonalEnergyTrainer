@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context="com.example.martin.personalenergytrainer.MainActivity">
+
     <RelativeLayout
         android:id="@+id/relLayoutMain"
         android:layout_width="match_parent"
