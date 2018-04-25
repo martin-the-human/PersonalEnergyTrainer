@@ -93,9 +93,9 @@ public class Settings : AppCompatActivity(){
     fun save()
     {
         val jsonObj = JsonObject()
-        jsonObj.addProperty("title", "rhythm") //change this line
-        jsonObj.addProperty("singer", "me") //change this line too
-        jsonObj.addProperty("text", "hello there") //the string to be saved!
+        jsonObj.addProperty("time", "") //change this line
+        jsonObj.addProperty("shirt", "me") //change this line too
+        jsonObj.addProperty("colourblind", "hello there") //the string to be saved!
 
         //POST demo
         APIRelated

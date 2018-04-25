@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".UserProfile" />
-        <activity android:name=".SettingsOld"></activity>
+        <activity android:name=".Settings"></activity>
         <activity android:name=".POSTandGET"></activity>
     </application>
 

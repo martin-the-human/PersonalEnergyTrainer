@@ -45,47 +45,6 @@
                 android:layout_weight="1"/>
         </LinearLayout>
 
-        <!--LinearLayout
-            android:id="@+id/timeFormat12"
-            android:layout_below="@id/linLayBlind"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/t12hrformat"
-                android:textSize="20sp"/>
-            <RadioButton
-                android:id="@+id/rad12hr"
-                android:textSize="20sp"
-                android:layout_width="0dp"
-                android:layout_height="64dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/timeFormat24"
-            android:layout_below="@id/timeFormat12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="4">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/t24hrformat"
-                android:textSize="20sp"/>
-            <RadioButton
-                android:id="@+id/rad24hr"
-                android:textSize="20sp"
-                android:layout_width="0dp"
-                android:layout_height="64dp"
-                android:layout_weight="1"/>
-        </LinearLayout-->
-
         <!-- time format options -->
         <RadioGroup
             android:id="@+id/rad_grp_time"

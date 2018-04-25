@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent settings = new Intent(MainActivity.this, POSTandGET.class);
+                Intent settings = new Intent(MainActivity.this, Settings.class);
                 startActivity(settings);
             }
         });
@@ -81,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
                 if (extra_un.matches("test1") && extra_pw.matches("test1") ){
                     shirt_colour = 2;
                     test_energy_usage = 72;
+                    Toast.makeText(getApplicationContext(), "This data belongs to test User1", Toast.LENGTH_LONG).show();
                 }
                 else if (extra_un.matches("test2") && extra_pw.matches("test2")){
                     shirt_colour = 1;
                     test_energy_usage = 23;
+                    Toast.makeText(getApplicationContext(), "This data belongs to test User2", Toast.LENGTH_LONG).show();
                 }
 
                 //if no account found then:
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 shirt_colour = i1;
 
                 Random r2 = new Random();
-                int i2 = r2.nextInt(101 - 0);
+                int i2 = r2.nextInt(101 - 0) + 0;
                 test_energy_usage = i2;
 
                 Toast.makeText(MainActivity.this, Integer.toString(i1), Toast.LENGTH_SHORT).show();

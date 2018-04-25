@@ -24,7 +24,6 @@ class LoginScreen : AppCompatActivity() {
     lateinit var username: EditText
     lateinit var password: EditText
     lateinit var btn_login: Button
-    //val bundle: Bundle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

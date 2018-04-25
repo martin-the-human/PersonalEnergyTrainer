@@ -40,7 +40,7 @@
                 android:layout_weight="1"
                 android:text="First Name"
                 android:textSize="20sp"/>
-            <TextView
+            <EditText
                 android:id="@+id/txtFirstNameUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -63,7 +63,7 @@
                 android:layout_weight="1"
                 android:text="Surname"
                 android:textSize="20sp"/>
-            <TextView
+            <EditText
                 android:id="@+id/txtSurnameUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -86,7 +86,7 @@
                 android:layout_weight="1"
                 android:text="@string/address"
                 android:textSize="20sp"/>
-            <TextView
+            <EditText
                 android:id="@+id/txtAddressUser"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -94,6 +94,15 @@
                 android:text="Bonnyrigg"
                 android:textSize="20sp"/>
         </LinearLayout>
+
+        <!-- save button -->
+        <Button
+            android:id="@+id/btnSaveProfile"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Save" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
