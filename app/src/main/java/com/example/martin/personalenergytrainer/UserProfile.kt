@@ -2,6 +2,7 @@ package com.example.martin.personalenergytrainer
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -14,21 +15,21 @@ import retrofit2.Response
 
 class UserProfile : AppCompatActivity() {
 
-    lateinit var save: Button
     lateinit var firstname: EditText
     lateinit var surname: EditText
     lateinit var address: EditText
-
+    lateinit var btn_save: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
+        btn_save = findViewById<View>(R.id.btnSaveProfile) as Button
         firstname = findViewById(R.id.txtFirstNameUser)
         surname = findViewById(R.id.txtSurnameUser)
         address = findViewById(R.id.txtAddressUser)
 
-        save.setOnClickListener {
+        btn_save.setOnClickListener {
             var name1 = firstname.text.toString()
             var name2 = surname.text.toString()
             var address = address.text.toString()
