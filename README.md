@@ -18,13 +18,13 @@ Requirements
 • Piskel (https://www.piskelapp.com/)
 
 
-#Authors
+# Authors
 Gavin Jones – Project Leader
 Martin Wilson – Lead Programmer
 Mandy Yip – Programmer and designer
 Max Robertson – Security and Accounts
 
-#License
+# License
 
-#Acknowledgements
+# Acknowledgements
 Scottish Energy Centre
