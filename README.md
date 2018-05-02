@@ -14,7 +14,7 @@ Requirements
 <br />
 
 # Built With
-• Java and Kotlin using Android Studio  (https://developer.android.com/studio/index.html)
+• Java and Kotlin using Android Studio  (https://developer.android.com/studio/index.html)<br />
 • Piskel (https://www.piskelapp.com/)
 
 
