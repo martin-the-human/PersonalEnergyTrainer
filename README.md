@@ -19,10 +19,10 @@ Requirements
 
 
 # Authors
-Gavin Jones – Project Leader
-Martin Wilson – Lead Programmer
-Mandy Yip – Programmer and designer
-Max Robertson – Security and Accounts
+Gavin Jones – Project Leader <br />
+Martin Wilson – Lead Programmer <br />
+Mandy Yip – Programmer and designer <br />
+Max Robertson – Security and Accounts <br />
 
 # License
 
